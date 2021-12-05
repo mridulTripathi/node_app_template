@@ -6,7 +6,7 @@ const port = 3000;
 mongoose.connect('mongodb+srv://mridul:<password>@cluster0.lstng.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 const db = mongoose.connection;
 
-db.on("error", console.error.bind(console, "connection error: "));
+db.on("Error", console.error.bind(console, "DB connection error"));
 db.once("open", function () {
   console.log("Successfully Connected to Mongo DB");
 });
